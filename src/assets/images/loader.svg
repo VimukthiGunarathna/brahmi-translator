@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" style="enable-background:new 0 0 595.3 841.9;" xml:space="preserve">
+	<defs>
+		<clipPath x="0" y="0" width="100" height="100" id="move-123456">
+			<rect x="0" y="0" width="79.1364" height="100">
+				<animate attributeName="width" calcMode="linear" values="0;100;100" keyTimes="0;0.5;1" dur="1s" begin="0s" repeatCount="indefinite"></animate>
+				<animate attributeName="x" calcMode="linear" values="0;0;100" keyTimes="0;0.5;1" dur="1s" begin="0s" repeatCount="indefinite"></animate>
+			</rect>
+		</clipPath>
+	</defs>
+	<rect clip-path="url(#move-123456)" x="5" y="44" rx="0" ry="0" width="90" height="5px" stroke="#ffffff" fill="#297fd5" stroke-width="0"/>
+	<rect x="5" y="44" rx="2.5" ry="2.5" width="90" height="5px" stroke="#ffffff" fill="transparent" stroke-width="1"/>
+	<rect x="4" y="43" rx="3.5" ry="3.5" width="92" height="7px" stroke="#a2a29d" fill="transparent" stroke-width="1"/>
+</svg>

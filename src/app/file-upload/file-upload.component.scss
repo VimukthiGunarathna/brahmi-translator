@@ -1,0 +1,36 @@
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+.box {
+    padding: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+    border:(1px, solid);
+  
+}
+.light-grey-bg {
+    background-color: #3A3E46;
+    border-color: #3A3E46;
+}
+.white-text {
+    color: #ffffff;
+  }
+.input-text {
+    font-family: Chandima;
+}
+.input-box {
+
+    input {
+      width: 100%;
+      height: 150px;
+      background-color: #3A3E46;
+      color: #ffffff;
+  
+      ::placeholder {
+        color: #ffffff;
+        float: top;
+      }
+    }
+}
