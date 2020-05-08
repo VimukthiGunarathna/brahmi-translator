@@ -9,11 +9,11 @@
         </div>
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="translator" role="tabpanel" aria-labelledby="translator-tab">
-                <section class="section content-1 grey-bg py-5">
-                    <div class="col-12">
+                <section class="section content-1 grey-bg py-3">
+                    <div class="col-12 mt-5">
                         <div class="row">
                             <div class="col-9">
-                                <div class="row mb-5">
+                                <div class="row mb-4">
                                     <div class="col-12">
                                         <div class="box yellow-bg">
                                             <h3>Translate your inscription, <b>Vimukthi</b></h3>
@@ -24,11 +24,71 @@
                                 <div>
                                     <app-file-upload></app-file-upload>
                                 </div>
+                                <div class="row mb-3 d-none">
+                                    <div class="col-12 english-box">
+                                        <input class="box light-grey-bg white-text" placeholder="English Translation....">
+                                    </div>
+                                </div>
+                                <div class="row mb-3 d-none">
+                                    <div class="col-12 sinhala-box">
+                                        <input class="box light-grey-bg white-text" placeholder="Sinhala Translation....">
+                                    </div>
+                                </div>
+                                <div class="row mb-3 d-none">
+                                    <div class="col-12 input-box">
+                                        <table class="table table-striped table-dark">
+                                            <thead class="table-head-font">
+                                              <tr class="text-center">
+                                                <th>Word</th>
+                                                <th>Definition</th>
+                                                <th>Reference</th>
+                                                <th>Additional</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody class="table-body-font">
+                                              <tr class="text-center">
+                                                <td>Jacob</td>
+                                                <td>Mark</td>
+                                                <td>Otto</td>
+                                                <td>@mdo</td>
+                                              </tr>
+                                              <tr class="text-center">
+                                                <td>Jacob</td>
+                                                <td>Jacob</td>
+                                                <td>Thornton</td>
+                                                <td>@fat</td>
+                                              </tr>
+                                              <tr class="text-center">
+                                                <td>Jacob</td>
+                                                <td>Larry</td>
+                                                <td>the Bird</td>
+                                                <td>@twitter</td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                    </div>
+                                </div>
                                 <div class="row mb-4">
                                     <div class="col">
-                                        <div class="stat-box h-100 light-grey-bg mt-5 pb-0">
+                                        <div class="definition-button">
+                                            <button class="box-btn light-grey-bg white-text">
+                                                <span class="text-size">Word to Definition</span>
+                                            </button>
+                                        </div>
+                                        <div class="translate-button">
+                                            <select class="box-btn light-grey-bg white-text mx-3 text-size">
+                                                <option class="text-center text-size" >Translate</option>
+                                                <option class="text-center text-size" value="english">Translate (English)</option>
+                                                <option class="text-center text-size" value="sinhala">Translate (Sinhala)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col">
+                                        <div class="stat-box h-100 light-grey-bg pb-0" id="scroll" data-simplebar="" data-simplebar-auto-hide="true">
                                             <div class="row align-items-center white-text pb-3">
-                                                <div class="col-9"><span><b>OCR ENGINE</b></span></div>
+                                                <div class="col-9"><span class="text-size">OCR ENGINE</span></div>
                                                 <div class="col d-none text-right">
                                                     <button>Add</button>
                                                 </div>
@@ -37,23 +97,23 @@
                                                 <div class="row cust-lh stat-text white-text">
                                                     <div class="col-4 text-center p-0 right-border">
                                                         <span class="medium-text">54 Char</span><br>
-                                                        <span><b>2 images</b></span>
+                                                        <span class="highlight-text">2 images</span>
                                                     </div>
                                                     <div class="col-4 text-center p-0 right-border">
                                                         <span class="medium-text">22 scripts</span><br>
-                                                        <span><b>Translated</b></span>
+                                                        <span class="highlight-text">Translated</span>
                                                     </div>
                                                     <div class="col-4 text-center p-0 left-border">
                                                         <span class="medium-text">70%</span><br>
-                                                        <span><b>Accuracy</b></span>
+                                                        <span class="highlight-text">Accuracy</span>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row justify-content-center align-items-center py-3">
                                                 <div class="col-8 text-center">
                                                     <div class="mini-box yellow-bg">
-                                                        <span class="white-text">128 BRAHMI</span><br>
-                                                        <span class="black-text"><i>Highest Translations</i></span>
+                                                        <span class="white-text highlight-text">128 BRAHMI</span><br>
+                                                        <span class="black-text highlight-text"><i>Highest Translations</i></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -67,10 +127,9 @@
                                         </div>
                                     </div>
                                     <div class="col">
-                                        <div class="stat-box stat1 h-100 light-grey-bg mt-5 pb-0" id="scroll"
-                                            data-simplebar="" data-simplebar-auto-hide="true">
+                                        <div class="stat-box stat1 h-100 light-grey-bg pb-0" id="scroll" data-simplebar="" data-simplebar-auto-hide="true">
                                             <div class="row align-items-center white-text">
-                                                <div class="col-9 pr-0"><span><b>PUBLISHED TRANSLATIONS</b></span></div>
+                                                <div class="col-9 pr-0"><span class="text-size">PUBLISHED TRANSLATIONS</span></div>
                                                 <div class="col pl-0 text-right">
                                                     <button class="add-button">Add</button>
                                                 </div>
@@ -80,7 +139,7 @@
                                                     <div class="col-12 py-4 bottom-border">
                                                         <div class="row align-items-center">
                                                             <div class="col-8 stat-text p-0">
-                                                                <span><b>Gampaha Inscription</b></span><br>
+                                                                <span class="highlight-text">Gampaha Inscription</span><br>
                                                                 <span>Last synced: Today, 8:43 AM</span>
                                                             </div>
                                                             <div class="col d-none p-0 text-right">
@@ -94,7 +153,7 @@
                                                     <div class="col-12 py-4 bottom-border">
                                                         <div class="row align-items-center">
                                                             <div class="col-8 stat-text p-0">
-                                                                <span><b>Gadoladeniya Inscription</b></span><br>
+                                                                <span class="highlight-text">Gadoladeniya Inscription</span><br>
                                                                 <span>Last synced: August 10, 2016</span>
                                                             </div>
                                                             <div class="col p-0 text-right">
@@ -106,7 +165,7 @@
                                                     <div class="col-12 py-4 bottom-border">
                                                         <div class="row align-items-center">
                                                             <div class="col-8 stat-text p-0">
-                                                                <span><b>Gadoladeniya Inscription</b></span><br>
+                                                                <span class="highlight-text">Gadoladeniya Inscription</span><br>
                                                                 <span>Last synced: August 10, 2016</span>
                                                             </div>
                                                             <div class="col p-0 text-right">
@@ -118,7 +177,7 @@
                                                     <div class="col-12 py-4 bottom-border">
                                                         <div class="row align-items-center">
                                                             <div class="col-8 stat-text p-0">
-                                                                <span><b>Gadoladeniya Inscription</b></span><br>
+                                                                <span class="highlight-text">Gadoladeniya Inscription</span><br>
                                                                 <span>Last synced: August 10, 2016</span>
                                                             </div>
                                                             <div class="col p-0 text-right">
@@ -130,7 +189,7 @@
                                                     <div class="col-12 py-4">
                                                         <div class="row align-items-center">
                                                             <div class="col-8 stat-text p-0">
-                                                                <span><b>Gadoladeniya Inscription</b></span><br>
+                                                                <span class="highlight-text">Gadoladeniya Inscription</span><br>
                                                                 <span>Last synced: August 10, 2016</span>
                                                             </div>
                                                             <div class="col p-0 text-right">
@@ -144,9 +203,9 @@
                                         </div>
                                     </div>
                                     <div class="col">
-                                        <div class="stat-box h-100 light-grey-bg mt-5 pb-0">
+                                        <div class="stat-box h-100 light-grey-bg pb-0">
                                             <div class="row align-items-center white-text pb-3">
-                                                <div class="col-9"><span><b>DATA COLLECTION</b></span></div>
+                                                <div class="col-9"><span class="text-size">DATA COLLECTION</span></div>
                                                 <div class="col pl-0 text-right">
                                                     <button class="add-button">Add</button>
                                                 </div>
@@ -161,7 +220,7 @@
                                                     <div class="col-12 py-4 top-border">
                                                         <div class="row align-items-center">
                                                             <div class="col-8 stat-text p-0">
-                                                                <span><b>Gadoladeniya Inscription</b></span><br>
+                                                                <span class="highlight-text">Gadoladeniya Inscription</span><br>
                                                                 <span>Last synced: August 10, 2016</span>
                                                             </div>
                                                             <div class="col p-0 text-right">
@@ -174,20 +233,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-auto">
-                                        <div class="translate-button">
-                                            <button class="box light-grey-bg white-text">
-                                                <span>Translate</span>
-                                            </button>
-                                        </div>
-                                    </div>
                                 </div>
-                                <div class="row mb-3">
+                                <div class="row mb-4">
                                     <div class="col">
                                         <div class="display-box bx1 h-100 light-grey-bg" id="scroll" data-simplebar=""
                                             data-simplebar-auto-hide="true">
                                             <div class="row align-items-center white-text">
-                                                <div class="col-9"><span><b>YOUR INSCRIPTIONS</b></span></div>
+                                                <div class="col-9"><span class="text-size">YOUR INSCRIPTIONS</span></div>
                                                 <div class="col pl-0 text-right">
                                                     <button class="new-button">New</button>
                                                 </div>
@@ -197,7 +249,7 @@
                                                     <ul>
                                                         <li>
                                                             <div class="content">
-                                                                <span>Recent</span>
+                                                                <span class="highlight-text">Recent</span>
                                                                 <div class="row align-items-center my-3">
                                                                     <div class="col-6 pr-0">
                                                                         <div class="image-block">
@@ -218,7 +270,7 @@
                                                         </li>
                                                         <li>
                                                             <div class="content">
-                                                                <span>Past</span>
+                                                                <span class="highlight-text">Past</span>
                                                                 <div class="row align-items-center my-3">
                                                                     <div class="col-12">
                                                                         <div class="row pl-3 pr-0">
@@ -267,7 +319,7 @@
                                                         </li>
                                                         <li>
                                                             <div class="content">
-                                                                <span>Future</span>
+                                                                <span class="highlight-text">Future</span>
                                                                 <div class="row align-items-center my-3">
                                                                     <div class="col-12">
                                                                         <div class="row pl-3 pr-0">
@@ -320,12 +372,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col p-0">
+                                    <div class="col">
                                         <div class="display-box no-scroll h-100 light-grey-bg">
                                             <div class="row align-items-center white-text mb-3">
-                                                <div class="col-9"><span><b>TRANSLATIONS</b></span></div>
+                                                <div class="col-9"><span class="text-size">TRANSLATIONS</span></div>
                                                 <div class="col d-none text-right">
-                                                    <button class="new-button">New</button>
+                                                    <button class="new-button highlight-text">New</button>
                                                 </div>
                                             </div>
                                             <div class="row graph-bg align-items-center yellow-text large-text mt-4">
@@ -337,91 +389,93 @@
                                         <div class="display-box bx1 h-100 light-grey-bg" id="scroll" data-simplebar=""
                                             data-simplebar-auto-hide="true">
                                             <div class="row align-items-center white-text mb-3">
-                                                <div class="col-auto"><span><b>INSTALLED FONTS </b></span></div>
+                                                <div class="col-auto"><span class="text-size">INSTALLED FONTS</span></div>
                                                 <div class="col-auto p-0">
                                                     <span class="rounded-text">12</span>
                                                 </div>
                                                 <div class="col d-none text-right">
-                                                    <button class="new-button">New</button>
+                                                    <button class="new-button highlight-text">New</button>
                                                 </div>
                                             </div>
                                             <div class="row align-items-center white-text">
                                                 <div class="col-12">
-                                                    <table class="table">
-                                                        <thead>
-                                                            <tr class="yellow-text h-100">
-                                                                <th scope="col">Font Name</th>
-                                                                <th scope="col">Date</th>
-                                                                <th scope="col">Type</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-
-                                                            <tr>
-                                                                <td><span class="badge">HC</span>Senarath Paranavithana
-                                                                </td>
-                                                                <td>12/01/2020</td>
-                                                                <td><i class="fas fa-circle pr-2"
-                                                                        style="color: lightcoral;"></i>TTF
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><span class="badge">HC</span>Senarath Paranavithana
-                                                                </td>
-                                                                <td>12/01/2020</td>
-                                                                <td><i class="fas fa-circle pr-2"
-                                                                        style="color: lightcoral;"></i>TTF
-                                                                </td>
-                                                            </tr>
-
-                                                            <tr>
-                                                                <td><span class="badge">OB</span>Senarath Paranavithana
-                                                                </td>
-                                                                <td>12/01/2020</td>
-                                                                <td><i class="fas fa-circle pr-2"
-                                                                        style="color: lightgreen;"></i>TTF
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><span class="badge">OB</span>Senarath Paranavithana
-                                                                </td>
-                                                                <td>12/01/2020</td>
-                                                                <td><i class="fas fa-circle pr-2"
-                                                                        style="color: lightgreen;"></i>TTF
-                                                                </td>
-                                                            </tr>
-
-                                                            <tr>
-                                                                <td><span class="badge">CC</span>Brahmi</td>
-                                                                <td>12/01/2020</td>
-                                                                <td><i class="fas fa-circle pr-2"
-                                                                        style="color: yellow;"></i>TTF
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><span class="badge">CC</span>Brahmi</td>
-                                                                <td>12/01/2020</td>
-                                                                <td><i class="fas fa-circle pr-2"
-                                                                        style="color: yellow;"></i>TTF
-                                                                </td>
-                                                            </tr>
-
-                                                            <tr>
-                                                                <td><span class="badge">DS</span>Brahmi</td>
-                                                                <td>12/01/2020</td>
-                                                                <td><i class="fas fa-circle pr-2"
-                                                                        style="color: lightblue;"></i>TTF
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><span class="badge">DS</span>Brahmi</td>
-                                                                <td>12/01/2020</td>
-                                                                <td><i class="fas fa-circle pr-2"
-                                                                        style="color: lightblue;"></i>TTF
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
+                                                    <div class="font-table">
+                                                        <table class="table">
+                                                            <thead>
+                                                                <tr class="yellow-text h-100">
+                                                                    <th scope="col" class="highlight-text">Font Name</th>
+                                                                    <th scope="col" class="highlight-text">Date</th>
+                                                                    <th scope="col" class="highlight-text">Type</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody class="table-font">
+    
+                                                                <tr>
+                                                                    <td><span class="badge">HC</span>Senarath Paranavithana
+                                                                    </td>
+                                                                    <td>12/01/2020</td>
+                                                                    <td><i class="fas fa-circle pr-2"
+                                                                            style="color: lightcoral;"></i>TTF
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><span class="badge">HC</span>Senarath Paranavithana
+                                                                    </td>
+                                                                    <td>12/01/2020</td>
+                                                                    <td><i class="fas fa-circle pr-2"
+                                                                            style="color: lightcoral;"></i>TTF
+                                                                    </td>
+                                                                </tr>
+    
+                                                                <tr>
+                                                                    <td><span class="badge">OB</span>Senarath Paranavithana
+                                                                    </td>
+                                                                    <td>12/01/2020</td>
+                                                                    <td><i class="fas fa-circle pr-2"
+                                                                            style="color: lightgreen;"></i>TTF
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><span class="badge">OB</span>Senarath Paranavithana
+                                                                    </td>
+                                                                    <td>12/01/2020</td>
+                                                                    <td><i class="fas fa-circle pr-2"
+                                                                            style="color: lightgreen;"></i>TTF
+                                                                    </td>
+                                                                </tr>
+    
+                                                                <tr>
+                                                                    <td><span class="badge">CC</span>Brahmi</td>
+                                                                    <td>12/01/2020</td>
+                                                                    <td><i class="fas fa-circle pr-2"
+                                                                            style="color: yellow;"></i>TTF
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><span class="badge">CC</span>Brahmi</td>
+                                                                    <td>12/01/2020</td>
+                                                                    <td><i class="fas fa-circle pr-2"
+                                                                            style="color: yellow;"></i>TTF
+                                                                    </td>
+                                                                </tr>
+    
+                                                                <tr>
+                                                                    <td><span class="badge">DS</span>Brahmi</td>
+                                                                    <td>12/01/2020</td>
+                                                                    <td><i class="fas fa-circle pr-2"
+                                                                            style="color: lightblue;"></i>TTF
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><span class="badge">DS</span>Brahmi</td>
+                                                                    <td>12/01/2020</td>
+                                                                    <td><i class="fas fa-circle pr-2"
+                                                                            style="color: lightblue;"></i>TTF
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -434,21 +488,21 @@
                                         <div class="history-box light-grey-bg" id="scroll" data-simplebar=""
                                             data-simplebar-auto-hide="true">
                                             <div class="row align-items-center white-text mb-3">
-                                                <div class="col-auto"><span><b>TRANSLATION HISTROY</b></span></div>
+                                                <div class="col-auto"><span class="text-size">TRANSLATION HISTROY</span></div>
                                                 <div class="col-auto p-0">
                                                     <span class="rounded-text">71</span>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col">
-                                                    <div class="row timeline-ui my-3">
+                                                    <div class="row timeline-ui my-2">
                                                         <div class="timeline yellow-text">
                                                             <ul>
                                                                 <li>
-                                                                    <div class="content">
-                                                                        <div class="row align-items-center mb-3">
+                                                                    <div class="content mb-3">
+                                                                        <div class="row align-items-center mb-2">
                                                                             <div class="col">
-                                                                                <span>Brahmi</span>
+                                                                                <span class="highlight-text">Brahmi</span>
                                                                             </div>
                                                                             <div
                                                                                 class="col mini-text white-text text-right float-right">
@@ -463,7 +517,7 @@
                                                                                 </span>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="row align-items-center my-3">
+                                                                        <div class="row align-items-center">
                                                                             <div class="col">
                                                                                 <span
                                                                                     class="rounded-text-2">ABC.JPEG</span>
@@ -472,10 +526,10 @@
                                                                     </div>
                                                                 </li>
                                                                 <li>
-                                                                    <div class="content">
-                                                                        <div class="row align-items-center mb-3">
+                                                                    <div class="content mb-3">
+                                                                        <div class="row align-items-center mb-2">
                                                                             <div class="col">
-                                                                                <span>Brahmi</span>
+                                                                                <span class="highlight-text">Brahmi</span>
                                                                             </div>
                                                                             <div
                                                                                 class="col mini-text white-text text-right float-right">
@@ -490,7 +544,7 @@
                                                                                 </span>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="row align-items-center my-3">
+                                                                        <div class="row align-items-center">
                                                                             <div class="col">
                                                                                 <span
                                                                                     class="rounded-text-2">ABC.JPEG</span>
@@ -499,10 +553,10 @@
                                                                     </div>
                                                                 </li>
                                                                 <li>
-                                                                    <div class="content">
-                                                                        <div class="row align-items-center mb-3">
+                                                                    <div class="content mb-3">
+                                                                        <div class="row align-items-center mb-2">
                                                                             <div class="col">
-                                                                                <span>Brahmi</span>
+                                                                                <span class="highlight-text">Brahmi</span>
                                                                             </div>
                                                                             <div
                                                                                 class="col mini-text white-text text-right float-right">
@@ -517,7 +571,7 @@
                                                                                 </span>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="row align-items-center my-3">
+                                                                        <div class="row align-items-center">
                                                                             <div class="col">
                                                                                 <span
                                                                                     class="rounded-text-2">ABC.JPEG</span>
@@ -526,10 +580,10 @@
                                                                     </div>
                                                                 </li>
                                                                 <li>
-                                                                    <div class="content">
-                                                                        <div class="row align-items-center mb-3">
+                                                                    <div class="content mb-3">
+                                                                        <div class="row align-items-center mb-2">
                                                                             <div class="col">
-                                                                                <span>Brahmi</span>
+                                                                                <span class="highlight-text">Brahmi</span>
                                                                             </div>
                                                                             <div
                                                                                 class="col mini-text white-text text-right float-right">
@@ -544,7 +598,7 @@
                                                                                 </span>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="row align-items-center my-3">
+                                                                        <div class="row align-items-center">
                                                                             <div class="col">
                                                                                 <span
                                                                                     class="rounded-text-2">ABC.JPEG</span>
@@ -553,10 +607,10 @@
                                                                     </div>
                                                                 </li>
                                                                 <li>
-                                                                    <div class="content">
-                                                                        <div class="row align-items-center mb-3">
+                                                                    <div class="content mb-3">
+                                                                        <div class="row align-items-center mb-2">
                                                                             <div class="col">
-                                                                                <span>Brahmi</span>
+                                                                                <span class="highlight-text">Brahmi</span>
                                                                             </div>
                                                                             <div
                                                                                 class="col mini-text white-text text-right float-right">
@@ -571,7 +625,7 @@
                                                                                 </span>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="row align-items-center my-3">
+                                                                        <div class="row align-items-center">
                                                                             <div class="col">
                                                                                 <span
                                                                                     class="rounded-text-2">ABC.JPEG</span>
@@ -580,10 +634,10 @@
                                                                     </div>
                                                                 </li>
                                                                 <li>
-                                                                    <div class="content">
-                                                                        <div class="row align-items-center mb-3">
+                                                                    <div class="content mb-3">
+                                                                        <div class="row align-items-center mb-2">
                                                                             <div class="col">
-                                                                                <span>Brahmi</span>
+                                                                                <span class="highlight-text">Brahmi</span>
                                                                             </div>
                                                                             <div
                                                                                 class="col mini-text white-text text-right float-right">
@@ -598,7 +652,7 @@
                                                                                 </span>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="row align-items-center my-3">
+                                                                        <div class="row align-items-center">
                                                                             <div class="col">
                                                                                 <span
                                                                                     class="rounded-text-2">ABC.JPEG</span>
@@ -607,10 +661,10 @@
                                                                     </div>
                                                                 </li>
                                                                 <li>
-                                                                    <div class="content">
-                                                                        <div class="row align-items-center mb-3">
+                                                                    <div class="content mb-3">
+                                                                        <div class="row align-items-center mb-2">
                                                                             <div class="col">
-                                                                                <span>Brahmi</span>
+                                                                                <span class="highlight-text">Brahmi</span>
                                                                             </div>
                                                                             <div
                                                                                 class="col mini-text white-text text-right float-right">
@@ -625,7 +679,7 @@
                                                                                 </span>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="row align-items-center my-3">
+                                                                        <div class="row align-items-center">
                                                                             <div class="col">
                                                                                 <span
                                                                                     class="rounded-text-2">ABC.JPEG</span>
@@ -634,10 +688,10 @@
                                                                     </div>
                                                                 </li>
                                                                 <li>
-                                                                    <div class="content">
-                                                                        <div class="row align-items-center mb-3">
+                                                                    <div class="content mb-3">
+                                                                        <div class="row align-items-center mb-2">
                                                                             <div class="col">
-                                                                                <span>Brahmi</span>
+                                                                                <span class="highlight-text">Brahmi</span>
                                                                             </div>
                                                                             <div
                                                                                 class="col mini-text white-text text-right float-right">
@@ -652,7 +706,7 @@
                                                                                 </span>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="row align-items-center my-3">
+                                                                        <div class="row align-items-center">
                                                                             <div class="col">
                                                                                 <span
                                                                                     class="rounded-text-2">ABC.JPEG</span>
@@ -661,10 +715,10 @@
                                                                     </div>
                                                                 </li>
                                                                 <li>
-                                                                    <div class="content">
-                                                                        <div class="row align-items-center mb-3">
+                                                                    <div class="content mb-3">
+                                                                        <div class="row align-items-center mb-2">
                                                                             <div class="col">
-                                                                                <span>Brahmi</span>
+                                                                                <span class="highlight-text">Brahmi</span>
                                                                             </div>
                                                                             <div
                                                                                 class="col mini-text white-text text-right float-right">
@@ -679,7 +733,7 @@
                                                                                 </span>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="row align-items-center my-3">
+                                                                        <div class="row align-items-center">
                                                                             <div class="col">
                                                                                 <span
                                                                                     class="rounded-text-2">ABC.JPEG</span>
@@ -792,7 +846,7 @@
                                                     <div class="col-12 py-4 bottom-border">
                                                         <div class="row align-items-center">
                                                             <div class="col-8 stat-text p-0">
-                                                                <span><b>Gampaha Inscription</b></span><br>
+                                                                <span class="highlight-text">Gampaha Inscription</span><br>
                                                                 <span>Last synced: Today, 8:43 AM</span>
                                                             </div>
                                                             <div class="col d-none p-0 text-right">
@@ -806,7 +860,7 @@
                                                     <div class="col-12 py-4 bottom-border">
                                                         <div class="row align-items-center">
                                                             <div class="col-8 stat-text p-0">
-                                                                <span><b>Gadoladeniya Inscription</b></span><br>
+                                                                <span class="highlight-text">Gadoladeniya Inscription</span><br>
                                                                 <span>Last synced: August 10, 2016</span>
                                                             </div>
                                                             <div class="col p-0 text-right">
@@ -818,7 +872,7 @@
                                                     <div class="col-12 py-4 bottom-border">
                                                         <div class="row align-items-center">
                                                             <div class="col-8 stat-text p-0">
-                                                                <span><b>Gadoladeniya Inscription</b></span><br>
+                                                                <span class="highlight-text">Gadoladeniya Inscription</span><br>
                                                                 <span>Last synced: August 10, 2016</span>
                                                             </div>
                                                             <div class="col p-0 text-right">
@@ -830,7 +884,7 @@
                                                     <div class="col-12 py-4 bottom-border">
                                                         <div class="row align-items-center">
                                                             <div class="col-8 stat-text p-0">
-                                                                <span><b>Gadoladeniya Inscription</b></span><br>
+                                                                <span class="highlight-text">Gadoladeniya Inscription</span><br>
                                                                 <span>Last synced: August 10, 2016</span>
                                                             </div>
                                                             <div class="col p-0 text-right">
@@ -842,7 +896,7 @@
                                                     <div class="col-12 py-4">
                                                         <div class="row align-items-center">
                                                             <div class="col-8 stat-text p-0">
-                                                                <span><b>Gadoladeniya Inscription</b></span><br>
+                                                                <span class="highlight-text">Gadoladeniya Inscription</span><br>
                                                                 <span>Last synced: August 10, 2016</span>
                                                             </div>
                                                             <div class="col p-0 text-right">
@@ -873,7 +927,7 @@
                                                     <div class="col-12 py-4 top-border">
                                                         <div class="row align-items-center">
                                                             <div class="col-8 stat-text p-0">
-                                                                <span><b>Gadoladeniya Inscription</b></span><br>
+                                                                <span class="highlight-text">Gadoladeniya Inscription</span><br>
                                                                 <span>Last synced: August 10, 2016</span>
                                                             </div>
                                                             <div class="col p-0 text-right">
@@ -1504,7 +1558,7 @@
                                                     <div class="col-12 py-4 bottom-border">
                                                         <div class="row align-items-center">
                                                             <div class="col-8 stat-text p-0">
-                                                                <span><b>Gampaha Inscription</b></span><br>
+                                                                <span class="highlight-text">Gampaha Inscription</span><br>
                                                                 <span>Last synced: Today, 8:43 AM</span>
                                                             </div>
                                                             <div class="col d-none p-0 text-right">
@@ -1518,7 +1572,7 @@
                                                     <div class="col-12 py-4 bottom-border">
                                                         <div class="row align-items-center">
                                                             <div class="col-8 stat-text p-0">
-                                                                <span><b>Gadoladeniya Inscription</b></span><br>
+                                                                <span class="highlight-text">Gadoladeniya Inscription</span><br>
                                                                 <span>Last synced: August 10, 2016</span>
                                                             </div>
                                                             <div class="col p-0 text-right">
@@ -1530,7 +1584,7 @@
                                                     <div class="col-12 py-4 bottom-border">
                                                         <div class="row align-items-center">
                                                             <div class="col-8 stat-text p-0">
-                                                                <span><b>Gadoladeniya Inscription</b></span><br>
+                                                                <span class="highlight-text">Gadoladeniya Inscription</span><br>
                                                                 <span>Last synced: August 10, 2016</span>
                                                             </div>
                                                             <div class="col p-0 text-right">
@@ -1542,7 +1596,7 @@
                                                     <div class="col-12 py-4 bottom-border">
                                                         <div class="row align-items-center">
                                                             <div class="col-8 stat-text p-0">
-                                                                <span><b>Gadoladeniya Inscription</b></span><br>
+                                                                <span class="highlight-text">Gadoladeniya Inscription</span><br>
                                                                 <span>Last synced: August 10, 2016</span>
                                                             </div>
                                                             <div class="col p-0 text-right">
@@ -1554,7 +1608,7 @@
                                                     <div class="col-12 py-4">
                                                         <div class="row align-items-center">
                                                             <div class="col-8 stat-text p-0">
-                                                                <span><b>Gadoladeniya Inscription</b></span><br>
+                                                                <span class="highlight-text">Gadoladeniya Inscription</span><br>
                                                                 <span>Last synced: August 10, 2016</span>
                                                             </div>
                                                             <div class="col p-0 text-right">
@@ -1585,7 +1639,7 @@
                                                     <div class="col-12 py-4 top-border">
                                                         <div class="row align-items-center">
                                                             <div class="col-8 stat-text p-0">
-                                                                <span><b>Gadoladeniya Inscription</b></span><br>
+                                                                <span class="highlight-text">Gadoladeniya Inscription</span><br>
                                                                 <span>Last synced: August 10, 2016</span>
                                                             </div>
                                                             <div class="col p-0 text-right">
@@ -2216,7 +2270,7 @@
                                                     <div class="col-12 py-4 bottom-border">
                                                         <div class="row align-items-center">
                                                             <div class="col-8 stat-text p-0">
-                                                                <span><b>Gampaha Inscription</b></span><br>
+                                                                <span class="highlight-text">Gampaha Inscription</span><br>
                                                                 <span>Last synced: Today, 8:43 AM</span>
                                                             </div>
                                                             <div class="col d-none p-0 text-right">
@@ -2230,7 +2284,7 @@
                                                     <div class="col-12 py-4 bottom-border">
                                                         <div class="row align-items-center">
                                                             <div class="col-8 stat-text p-0">
-                                                                <span><b>Gadoladeniya Inscription</b></span><br>
+                                                                <span class="highlight-text">Gadoladeniya Inscription</span><br>
                                                                 <span>Last synced: August 10, 2016</span>
                                                             </div>
                                                             <div class="col p-0 text-right">
@@ -2242,7 +2296,7 @@
                                                     <div class="col-12 py-4 bottom-border">
                                                         <div class="row align-items-center">
                                                             <div class="col-8 stat-text p-0">
-                                                                <span><b>Gadoladeniya Inscription</b></span><br>
+                                                                <span class="highlight-text">Gadoladeniya Inscription</span><br>
                                                                 <span>Last synced: August 10, 2016</span>
                                                             </div>
                                                             <div class="col p-0 text-right">
@@ -2254,7 +2308,7 @@
                                                     <div class="col-12 py-4 bottom-border">
                                                         <div class="row align-items-center">
                                                             <div class="col-8 stat-text p-0">
-                                                                <span><b>Gadoladeniya Inscription</b></span><br>
+                                                                <span class="highlight-text">Gadoladeniya Inscription</span><br>
                                                                 <span>Last synced: August 10, 2016</span>
                                                             </div>
                                                             <div class="col p-0 text-right">
@@ -2266,7 +2320,7 @@
                                                     <div class="col-12 py-4">
                                                         <div class="row align-items-center">
                                                             <div class="col-8 stat-text p-0">
-                                                                <span><b>Gadoladeniya Inscription</b></span><br>
+                                                                <span class="highlight-text">Gadoladeniya Inscription</span><br>
                                                                 <span>Last synced: August 10, 2016</span>
                                                             </div>
                                                             <div class="col p-0 text-right">
@@ -2297,7 +2351,7 @@
                                                     <div class="col-12 py-4 top-border">
                                                         <div class="row align-items-center">
                                                             <div class="col-8 stat-text p-0">
-                                                                <span><b>Gadoladeniya Inscription</b></span><br>
+                                                                <span class="highlight-text">Gadoladeniya Inscription</span><br>
                                                                 <span>Last synced: August 10, 2016</span>
                                                             </div>
                                                             <div class="col p-0 text-right">
