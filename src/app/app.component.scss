@@ -22,8 +22,12 @@ body {
   // display: none;
 
 }
-
+.loader1{
+  display: flex;
+  justify-content: center;
+}
 .loader{
+    background-color: transparent;
     position: fixed;
     top: 0;
     left: 0;
@@ -124,14 +128,8 @@ body {
 
 .translate-button {
 
-  select {
+  button {
     float: right;
-  }
-
-  select {
-    background-color: #3A3E46;
-    border-color: #3A3E46;
-    color: white;
   }
 }
 
