@@ -1,0 +1,138 @@
+[
+    {
+        "letter": "w",
+        "unicode": "a"
+    },
+    {
+        "letter": "r",
+        "unicode": "ra"
+    },
+    {
+        "letter": "t",
+        "unicode": "e"
+    },
+    {
+        "letter": "y",
+        "unicode": "ha"
+    },
+    {
+        "letter": "u",
+        "unicode": "ma"
+    },
+    {
+        "letter": "i",
+        "unicode": "sa"
+    },
+    {
+        "letter": "o",
+        "unicode": "da"
+    },
+    {
+        "letter": "p",
+        "unicode": "ca"
+    },
+    {
+        "letter": "",
+        "unicode": "ḍha"
+    },
+    {
+        "letter": ";",
+        "unicode": "ta"
+    },
+    {
+        "letter": "l",
+        "unicode": "ka"
+    },
+    {
+        "letter": "k",
+        "unicode": "na"
+    },
+    {
+        "letter": "j",
+        "unicode": "va"
+    },
+    {
+        "letter": "h",
+        "unicode": "ya"
+    },
+    {
+        "letter": "g",
+        "unicode": "ṭa"
+    },
+    {
+        "letter": "c",
+        "unicode": "ja"
+    },
+    {
+        "letter": "v",
+        "unicode": "ḍa"
+    },
+    {
+        "letter": "n",
+        "unicode": "ba"
+    },
+    {
+        "letter": "m",
+        "unicode": "pa"
+    },
+    {
+        "letter": "W",
+        "unicode": "u"
+    },
+    {
+        "letter": "T",
+        "unicode": "o"
+    },
+    {
+        "letter": "Y",
+        "unicode": "śa"
+    },
+    {
+        "letter": "U",
+        "unicode": "ṭha"
+    },
+    {
+        "letter": "I",
+        "unicode": "ṣa"
+    },
+    {
+        "letter": "O",
+        "unicode": "dha"
+    },
+    {
+        "letter": "P",
+        "unicode": "cha"
+    },
+    {
+        "letter": "L",
+        "unicode": "kha"
+    },
+    {
+        "letter": "K",
+        "unicode": "ṇa"
+    },
+    {
+        "letter": "G",
+        "unicode": "tha"
+    },
+    {
+        "letter": "B",
+        "unicode": "i"
+    },
+    {
+        "letter": "N",
+        "unicode": "bha"
+    },
+    {
+        "letter": "M",
+        "unicode": "pha"
+    },
+    {
+        "letter": ",",
+        "unicode": "la"
+    },
+    {
+        "letter": ".",
+        "unicode": "ga"
+    }
+]

@@ -33,7 +33,8 @@
                                                     </div>
                                                 </div>
                                             </button>
-                                            <input type="file" name="myfile" (change)="handleFileInput($event.target.files)">
+                                            <input type="file" name="myfile"
+                                                (change)="handleFileInput($event.target.files)">
                                         </div>
                                     </div>
                                 </div>
@@ -46,7 +47,8 @@
                                                 </div>
                                                 <div *ngIf="!loader">
                                                     <input class="box light-grey-bg white-text"
-                                                        placeholder="Type Something...." [(ngModel)]="text" (ngModelChange)="translate_brahmi($event)">
+                                                        placeholder="Type Something...." [(ngModel)]="text"
+                                                        (ngModelChange)="translate_brahmi($event)">
                                                 </div>
                                             </div>
                                         </div>
@@ -55,13 +57,15 @@
                                 <div class="row mb-3" *ngIf="showEnglish">
                                     <div class="col-12 english-box">
                                         <input class="box light-grey-bg white-text"
-                                            placeholder="English Translation...." [(ngModel)]="englishText" (ngModelChange)="translate_english($event)">
+                                            placeholder="English Translation...." [(ngModel)]="englishText"
+                                            (ngModelChange)="translate_english($event)">
                                     </div>
                                 </div>
                                 <div class="row mb-3" *ngIf="showSinhala">
                                     <div class="col-12 sinhala-box">
                                         <input class="box light-grey-bg white-text"
-                                            placeholder="Sinhala Translation...." [(ngModel)]="sinhalaText" (ngModelChange)="translate_sinhala($event)">
+                                            placeholder="Sinhala Translation...." [(ngModel)]="sinhalaText"
+                                            (ngModelChange)="translate_sinhala($event)">
                                     </div>
                                 </div>
                                 <div class="row mb-3" *ngIf="showTable">
@@ -72,27 +76,26 @@
                                                     <th>Word</th>
                                                     <th>Definition</th>
                                                     <th>Reference</th>
-                                                    <th>Additional</th>
+                                                    <!-- <th>Additional</th> -->
                                                 </tr>
                                             </thead>
-                                            <tbody class="table-body-font">
+                                            <tbody class="table-body-font" *ngFor="let data of tableData">
                                                 <tr class="text-center">
-                                                    <td>Jacob</td>
-                                                    <td>Mark</td>
-                                                    <td>Otto</td>
-                                                    <td>@mdo</td>
-                                                </tr>
-                                                <tr class="text-center">
-                                                    <td>Jacob</td>
-                                                    <td>Jacob</td>
-                                                    <td>Thornton</td>
-                                                    <td>@fat</td>
-                                                </tr>
-                                                <tr class="text-center">
-                                                    <td>Jacob</td>
-                                                    <td>Larry</td>
-                                                    <td>the Bird</td>
-                                                    <td>@twitter</td>
+                                                <td>
+                                                    <tr *ngFor="let a of data.word">
+                                                        {{a}}
+                                                    </tr>
+                                                </td>
+                                                <td>
+                                                    <tr *ngFor="let b of data.definition">
+                                                        {{b}}
+                                                    </tr>
+                                                </td>
+                                                <td>
+                                                    <tr *ngFor="let c of data.refernce">
+                                                        {{c}}
+                                                    </tr>
+                                                </td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -101,7 +104,8 @@
                                 <div class="row mb-4">
                                     <div class="col">
                                         <div class="definition-button">
-                                            <button class="box-btn light-grey-bg white-text" (click)="wordToDefinition()">
+                                            <button class="box-btn light-grey-bg white-text"
+                                                (click)="wordToDefinition()" *ngIf="showWordtoDefinition">
                                                 <span class="text-size">Word to Definition</span>
                                             </button>
                                         </div>
