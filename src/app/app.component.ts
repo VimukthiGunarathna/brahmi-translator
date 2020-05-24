@@ -24,9 +24,13 @@ export class AppComponent {
   fontArray: any;
 
   //Translated Data
-  translation:any;
+  translation: any;
 
-  
+  //Definitions arrays
+  words = [];
+  definitions = [];
+  references = [];
+
   loader = false;
   language: string
 
@@ -44,9 +48,8 @@ export class AppComponent {
 
   tableData = [];
 
-  words = [];
-  definitions = [];
-  references = [];
+  jpg1 = '1.jpg'
+  jpg2 = 'A1.jpg'
 
   constructor(
     private back_end_service: SendfileService,
@@ -73,19 +76,16 @@ export class AppComponent {
     reader.readAsDataURL(this.fileToUpload);
 
 
-    if (this.fileToUpload.name == '1.jpg') {
+    if (this.fileToUpload.name == this.jpg1) {
       setTimeout(() => {
         this.sendImgToServer(this.fileToUpload)
         this.loader = false;
-      }, 3000);
-    } else if (this.fileToUpload.name == '2.jpg') {
+      }, 7000);
+    } else if (this.fileToUpload.name == this.jpg2) {
       setTimeout(() => {
+        this.sendImgToServer(this.fileToUpload)
         this.loader = false;
       }, 6000);
-    } else if (this.fileToUpload.name == '3.jpg') {
-      setTimeout(() => {
-        this.loader = false;
-      }, 7000);
     } else {
       setTimeout(() => {
         this.loader = false;
@@ -156,7 +156,7 @@ export class AppComponent {
     this.language = language;
     if (language == 'sinhala') {
       this.loader = true;
-      this.sinhala_translation();
+      this.sinhala_translation(this.transcribeCharacters);
       setTimeout(() => {
         this.loader = false;
         this.showSinhala = true;
@@ -165,133 +165,127 @@ export class AppComponent {
     if (language == 'english') {
       this.loader = true;
       this.english_translation(this.transcribeCharacters);
-      setTimeout(() => {
+    }
+  }
+
+
+
+  /**
+   * Sends the transcribed words to server for word 
+   * segmentation and translation to sinhala and english
+   * @param transcribeCharacters
+   */
+  english_translation(transcribeCharacters) {
+    this.back_end_service.translate_english(transcribeCharacters)
+      .subscribe((data) => {
+        this.translation = data;
+        this.englishText = this.translation;
+        console.log(this.translation);
         this.loader = false;
         this.showEnglish = true
-      }, 3000);
-    }
+        this.showWordtoDefinition = true;
+      });
   }
 
-
-
-  //show the  translation
-  english_translation(transcribeCharacters) {
-    this.back_end_service.transcribe(transcribeCharacters)
+  /**
+   * 
+   */
+  sinhala_translation(transcribeCharacters) {
+    this.back_end_service.translate_sinhala(transcribeCharacters)
       .subscribe((data) => {
-        this.transcribeCharacters = data;
-        // set the transcribed text to brahmi
-        this.fontMapping(this.transcribeCharacters);
-        console.log(this.transcribeCharacters);
-      })
-    // if (this.text == 'n;c, .yi') {
-    //   this.englishText = 'Bata Tiśaha leṇe';
-    //   this.showWordtoDefinition = true;
-    // }
-    // else if (this.text == 'n;c, .yi') {
-    //   this.englishText = 'Bata Utiya leṇe';
-    //   this.showWordtoDefinition = true;
-    // }
-    // else if (this.text == 'n;c, .yi') {
-    //   this.englishText = 'Bata Nadaha leṇe';
-    //   this.showWordtoDefinition = true;
-    // } else if (this.text == 'n;c, .yi') {
-    //   this.englishText == 'Upașaka Śoṇaha leṇe';
-    //   this.showWordtoDefinition = true;
-    // }
-    // else if (this.text == 'n;c, .yi') {
-    //   this.englishText = 'Tiśaguta teraśa leṇe';
-    //   this.showWordtoDefinition = true;
-    // }
-    // else if (this.text == 'n;c, .yi') {
-    //   this.englishText = 'Tiśaguta teraśa leṇe';
-    //   this.showWordtoDefinition = true;
-    // }
-    // else if (this.text == 'n;c, .yi') {
-    //   this.englishText = 'Tiśaguta teraśa leṇe';
-    //   this.showWordtoDefinition = true;
-    // }
-    // else {
-    //   console.log('File is not compatible');
-    // }
-}
+        this.translation = data;
+        this.sinhalaText = this.translation;
+        console.log(this.translation);
+        this.loader = false;
+        this.showSinhala = true
+      });
+  }
 
 
 
-wordToDefinition() {
-  this.loader = true;
-  setTimeout(() => {
-    this.loader = false;
-    this.insertTableData();
-    this.showTable = true;
-  }, 3000);
-}
+  wordToDefinition() {
+    this.loader = true;
+    this.back_end_service.wordToDefinition(this.words)
+      .subscribe((data) => {
+        this.definitions.push(data);
+        console.log(this.definitions);
+        this.loader = false;
+        this.insertTableData();
+        this.showTable = true;
+      });
+    // setTimeout(() => {
+    //   this.loader = false;
+    //   this.insertTableData();
+    //   this.showTable = true;
+    // }, 3000);
+  }
 
-
-inserToHTML() {
-  this.text = 'n;c, .yi';
-  // n;c, .yi
-}
-
-insertTableData() {
-  let data;
-  if (this.text == 'n;c, .yi') {
-    this.words.push('Bata', 'Tiśaha', 'leṇe');
-    this.definitions.push('lord', 'King Tissa', 'the cave');
-    this.references.push('IC.I, 1138,1161', 'IC.I, 1051', 'IC.I, 69, 355')
-    let tbData = {
-      word: this.words,
-      definition: this.definitions,
-      refernce: this.references
+  insertTableData() {
+    let data;
+    if (this.text == 'n;c, .yi') {
+      this.words.push('Bata', 'Tiśaha', 'leṇe');
+      this.definitions.push('lord', 'King Tissa', 'the cave');
+      this.references.push('IC.I, 1138,1161', 'IC.I, 1051', 'IC.I, 69, 355')
+      let tbData = {
+        word: this.words,
+        definition: this.definitions,
+        refernce: this.references
+      }
+      data = this.tableData.push(tbData);
+      console.log(this.tableData);
     }
-    data = this.tableData.push(tbData);
+    else if (this.text == '') {
+      this.words.push('teraśa', 'leṇe')
+      this.definitions.push('the elder', 'the cave');
+      this.references.push('IC.I, 1138,1161', 'IC.I, 1051', 'IC.I, 69, 355')
+      let tbData = {
+        word: this.words,
+        definition: this.definitions,
+        refernce: this.references
+      }
+      data = this.tableData.push(tbData);
+    }
+
     console.log(this.tableData);
-  }
-  else if (this.text == '') {
-    this.words.push('teraśa', 'leṇe')
-    this.definitions.push('the elder', 'the cave');
-    this.references.push('IC.I, 1138,1161', 'IC.I, 1051', 'IC.I, 69, 355')
-    let tbData = {
-      word: this.words,
-      definition: this.definitions,
-      refernce: this.references
-    }
-    data = this.tableData.push(tbData);
+
   }
 
-  console.log(this.tableData);
 
-}
-
-
-
-translate_brahmi(event) {
-  this.text = event;
-  console.log(event);
-}
-translate_english(event) {
-  this.text = event;
-  console.log(this.text);
-}
-translate_sinhala(event) {
-  this.text = event;
-  console.log(this.text);
-}
-
-
-//Shows the sinhala translation
-sinhala_translation() {
-  if (this.text = 'n;c, .yi') {
-    this.sinhalaText = 'බටතිෂාලෙන';
+  /**
+   * Brahmi text logger
+   * @param event written text in brahmi font 
+   */
+  translate_brahmi(event) {
+    this.text = event;
+    console.log(event);
   }
-}
+
+  /**
+   * English text logger
+   * @param event written text in english
+   */
+  translate_english(event) {
+    this.text = event;
+    console.log(this.text);
+  }
+
+  /**
+   * Sinhala text logger
+   * @param event written text in sinhala
+   */
+  translate_sinhala(event) {
+    this.text = event;
+    console.log(this.text);
+  }
 
 
-
-reset_text_fields() {
-  this.sinhalaText = '';
-  this.englishText = '';
-}
-
+  /**
+   * Reset entire system
+   */
+  reset_text_fields() {
+    this.sinhalaText = '';
+    this.englishText = '';
+  }
 
 
 }
